@@ -1,0 +1,49 @@
+1. 최초 커밋
+
+  1) 로컬 저장소 생성(git init)
+
+  2) 폴더 구조 설정 → 로컬 저장소에 저장(git add, git commit)
+
+  3) 원격 저장소 생성(깃허브에서 new Repository 버튼)
+
+  4) 원격 저장소와 로컬 저장소를 연결(git remote add [주소])
+
+  5) git checkout -b main
+
+  6)로컬 저장소에 있는 코드를 원격 저장소에 저장(git push origin main)
+
+2. 최초 커밋 이후 혼자 개발
+
+  1) 로컬 저장소가 생성된 폴더에서 개발
+
+  2) 로컬 저장소에 저장
+
+3. 최초 커밋 이후 팀 개발
+
+  1) 팀원은 생성된 레포지토리를 클론해야 한다. (git clone [주소]) (clone은 처음 한번만 쓰는 경우가 일반적)
+
+  2) 팀원은 각자 분배 받은 테스크에 따라 분기 생성 (git checkout -b 브랜치명)
+
+  3) 개발 → 로컬 저장소 저장 →원격 저장소 저장(분기) (git add . → git commit -m ‘…’→ git push feat/??? (**push main 아님**))
+
+  4) 원격 저장소에서 분기가 생성되었던 원래 분기에 합병 요청 (깃허브의 pull request)
+
+  5) 코드 리뷰, 엣지 케이스, 팀원 간 코드 맥락의 공유
+
+  6) 승인이 되거나 수정 요청 →수정 요청한 사항 수정 
+
+  7) 합병→conflict
+
+    (1) 원격 저장소 웹 사이트에서 수정
+
+    (2) 편집기 툴에 들어가서 수정
+
+    동기화
+
+      feat/??? →git checkout main → git pull origin main
+
+      conflict 해결
+
+      git checkout feat/??? → git merge main(feat 브랜치를 main에 붓는 게 아니라 main을 feat에 부어야 한다)
+
+      git add → git merge —continue(commit까지 알아서 됨)→git push origin feat/???
